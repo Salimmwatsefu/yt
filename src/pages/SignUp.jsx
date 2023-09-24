@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function SignIn() {
+function SignUp() {
 
   const [selectedRole, setSelectedRole] = useState('Creator');
 
@@ -18,8 +18,8 @@ function SignIn() {
 
        <form className='mt-14'>
         <label className=' text-white text-lg font-normal'>Sign in as:</label><br/>
-        <input type="radio" name="role" value={'Creator'} id="" className='mr-1' /><span className=' text-white mr-6'>Creator</span>
-        <input type="radio" name="role" value={'Editor'} id=""  className='mr-1' /><span className='text-white'>Editor</span>
+        <input type="radio" name="role" value={'Creator'} id="" className='mr-1' onChange={handleRoleChange} checked  /><span className=' text-white mr-6'>Creator</span>
+        <input type="radio" name="role" value={'Editor'} id=""  className='mr-1' onChange={handleRoleChange}  /><span className='text-white'>Editor</span>
         <br/>
         <div className='mt-7'>
         <label className=' text-base text-white '>Enter your email address...</label><br/>
@@ -41,4 +41,4 @@ function SignIn() {
   )
 }
 
-export default SignIn
+export default SignUp

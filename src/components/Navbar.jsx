@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { RiAccountCircleFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import Drawer from './Drawer'
-import SignIn from '../pages/SignIn'
+import SignUp from '../pages/SignUp';
 
 function Navbar() {
     const [isSignInOpen, setSignInOpen] = useState(false);
@@ -17,13 +17,18 @@ function Navbar() {
   return (
     <div className='bg-[#313131]'>
         <nav className='flex py-3'>
+            <Link to={"/"}>
             <div className='ml-14'>
                 <img src="" alt="logo" />
             </div>
+            </Link>
             <div className='ml-[520px] '>
                 <ul className='flex text-white/60 gap-5 text-sm font-medium'>
-                    <li>For Content creators</li><span className='border border-l-1 border-gray-300'></span>
-                    <li className='ml-2'>For Video Editors</li><span className='border border-l-1 border-gray-300'></span>
+                    
+                <Link to={"/creators"}><li>For Content creators</li></Link>
+                <span className='border border-l-1 border-gray-300'></span>
+                   
+                    <Link to={"/editors"}><li className='ml-2'>For Video Editors</li></Link><span className='border border-l-1 border-gray-300'></span>
                     <li className='ml-5'>FAQ</li>
                 </ul>
             </div>
@@ -40,7 +45,7 @@ function Navbar() {
 
         {/* Sign In Drawer component */}
         <Drawer isOpen={isSignInOpen} onClose = {closeSignIn}>
-            <SignIn />
+            <SignUp />
         </Drawer>
 
     </div>
